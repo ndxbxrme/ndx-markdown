@@ -5,5 +5,7 @@ try
 catch e
   module = angular.module 'ndx-markdown', []
 module.filter 'markdown', ($sce) ->
-  (input) ->
+  (input, newLines) ->
+    if newLines
+      input = input.replace /\n/g, '  \n'
     $sce.trustAs('html', marked(input))

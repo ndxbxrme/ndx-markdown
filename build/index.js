@@ -12,7 +12,10 @@
   }
 
   module.filter('markdown', function($sce) {
-    return function(input) {
+    return function(input, newLines) {
+      if (newLines) {
+        input = input.replace(/\n/g, '  \n');
+      }
       return $sce.trustAs('html', marked(input));
     };
   });
