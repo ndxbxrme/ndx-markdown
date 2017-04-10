@@ -3,7 +3,7 @@ module = null
 try
   module = angular.module 'ndx'
 catch e
-  module = angular.module 'ndx-markdown', []
+  module = angular.module 'ndx', []
 module.filter 'markdown', ($sce) ->
   (input, newLines) ->
     if newLines

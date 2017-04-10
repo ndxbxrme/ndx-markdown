@@ -8,7 +8,7 @@
     module = angular.module('ndx');
   } catch (error) {
     e = error;
-    module = angular.module('ndx-markdown', []);
+    module = angular.module('ndx', []);
   }
 
   module.filter('markdown', function($sce) {
